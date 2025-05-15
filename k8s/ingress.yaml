@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kapa-core-ingress
+spec:
+  rules:
+    - host: core.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: kapa-core-service
+                port:
+                  number: 80
