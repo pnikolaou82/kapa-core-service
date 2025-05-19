@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: core
-          image: <your-registry>/kapa-core-service:latest
+          image: panostaikun/kapa-core-service:latest
           ports:
             - containerPort: 5000
