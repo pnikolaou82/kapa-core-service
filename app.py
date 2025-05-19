@@ -44,9 +44,15 @@ def receive_metrics():
     app.logger.info(f"Received: {payload}")
     return jsonify({"status": "ok"}), 200
 
-@app.route("/api/metrics/history", methods=["GET"])
-def get_metrics():
-    return jsonify(event_store), 200
+@app.route("/api/metrics", methods=["GET", "POST"])
+def metrics():
+    if request.method == "POST":
+        data = request.get_json(force=True)
+        # Store metrics logic...
+        return jsonify({"status": "ok"}), 200
+    else:
+        return jsonify(event_store), 200
+
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
