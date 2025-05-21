@@ -16,4 +16,4 @@ spec:
         - name: core
           image: panostaikun/kapa-core-service:latest
           ports:
-            - containerPort: 5008
+            - containerPort: 5000

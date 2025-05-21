@@ -27,7 +27,7 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose Gunicorn port
-EXPOSE 5008
+EXPOSE 5000
 
 # Use Gunicorn for production
-CMD ["gunicorn", "--bind", "0.0.0.0:5008", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
